@@ -106,3 +106,20 @@ cc_prebuilt_binary {
     ],
     check_elf_files: false,
 }
+sh_binary {
+    name: "open-node",
+    src: "open-node.sh",
+    filename_from_src: true,
+}
+cc_prebuilt_binary {
+    name: "probe-node",
+    srcs: ["probe-node"],
+    shared_libs: [
+        "liblog",
+        "libz",
+        "libsync",
+        "libc",
+        "libandroid",
+    ],
+    check_elf_files: false,
+}
